@@ -1,13 +1,13 @@
-local StellarLibrary = (loadstring(Game:HttpGet("https://raw.githubusercontent.com/x2zu/OPEN-SOURCE-UI-ROBLOX/refs/heads/main/X2ZU%20UI%20ROBLOX%20OPEN%20SOURCE/NewUiStellar.lua")))();
-if StellarLibrary:LoadAnimation() then
-	StellarLibrary:StartLoad();
+local VelocityLibrary = (loadstring(Game:HttpGet("https://raw.githubusercontent.com/hillsTools/Velocity-Ui-library/refs/heads/main/VelocityUi.lua")))();
+if VelocityLibrary:LoadAnimation() then
+	VelocityLibrary:StartLoad();
 end;
-if StellarLibrary:LoadAnimation() then
-	StellarLibrary:Loaded();
+if VelocityLibrary:LoadAnimation() then
+	VelocityLibrary:Loaded();
 end;
 local UserInputService = game:GetService("UserInputService")
-local Window = StellarLibrary:Window({
-	SubTitle = "x2zu Project",
+local Window = VelocityLibrary:Window({
+	SubTitle = "Velocity Hub",
 	Size = game:GetService("UserInputService").TouchEnabled and UDim2.new(0, 380, 0, 260) or UDim2.new(0, 500, 0, 320),
 	TabWidth = 140
 })
@@ -34,7 +34,7 @@ Info = Information:Label("Important")
 
 General:Seperator("Main");
 Time = General:Label("Executor Time");
-function StellarLibraryTime()
+function VelocityLibraryTime()
 	local GameTime = math.floor(workspace.DistributedGameTime + 0.5);
 	local Hour = math.floor(GameTime / 60 ^ 2) % 24;
 	local Minute = math.floor(GameTime / 60 ^ 1) % 60;
@@ -44,35 +44,35 @@ end;
 spawn(function()
 	while task.wait() do
 		pcall(function()
-			StellarLibraryTime();
+			VelocityLibraryTime();
 		end);
 	end;
 end);
 Client = General:Label("Client");
-function StellarLibraryClient()
+function VelocityLibraryClient()
 	local Fps = workspace:GetRealPhysicsFPS();
 	Client:Set("[Fps] : " .. Fps);
 end;
 spawn(function()
 	while true do
 		wait(0.1);
-		StellarLibraryClient();
+		VelocityLibraryClient();
 	end;
 end);
 Client1 = General:Label("Client");
-function StellarLibraryClient1()
+function VelocityLibraryClient1()
 	local Ping = (game:GetService("Stats")).Network.ServerStatsItem["Data Ping"]:GetValueString();
 	Client1:Set("[Ping] : " .. Ping);
 end;
 spawn(function()
 	while true do
 		wait(0.1);
-		StellarLibraryClient1();
+		VelocityLibraryClient1();
 	end;
 end);
 General:Button("Copy Discord Link", function()
 	setclipboard("https://discord.gg/FmMuvkaWvG");
-	StellarLibrary:Notify("Copied!", 3);
+	VelocityLibrary:Notify("Copied!", 3);
 end);
 General:Label("Status : label");
 -- Dropdown
@@ -101,8 +101,8 @@ General:Line();
 local JobLabel = General:Label("Server Job ID :")
 
 General:Button("Copy Server Job ID", function()
-	setclipboard("https://discord.gg/FmMuvkaWvG");
-	StellarLibrary:Notify("Copied!", 3);
+	setclipboard("https://discord.gg/w4bFrrWvrr");
+	VelocityLibrary:Notify("Copied!", 3);
 end)
 
 General:Textbox("Enter Server Job ID", true, function(value)
